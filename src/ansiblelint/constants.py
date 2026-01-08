@@ -231,3 +231,22 @@ class States(Enum):
     def __bool__(self) -> bool:
         """Ensure all states evaluate as False as booleans."""
         return False
+
+# List of facts that should not trigger warnings for deprecated INJECT_FACTS_AS_VARS.
+INJECT_FACTS_AS_VARS_FACT_EXCEPTIONS: list[str] = [
+    "ansible_become_pass",
+    "ansible_check_mode",
+    "ansible_config_file",
+    "ansible_diff_mode",
+    "ansible_forks",
+    "ansible_group",
+    "ansible_host",
+    "ansible_inventory_sources",
+    "ansible_local",
+    "ansible_playbook_python",
+    "ansible_run_tags",
+    "ansible_skip_tags",
+    "ansible_user",
+    "ansible_verbosity",
+    "ansible_version",
+]
